@@ -12,6 +12,7 @@ psycopg2-binary = "*"
 django-filter = "*"
 django-heroku = "*"
 gunicorn = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

@@ -14,7 +14,7 @@ SECRET_KEY = '^!uvh&e8n1*c7m%+$_l9djb$!)#s$#2hjrrb4)udo8o&y0q@q&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.10.50', 'n1ck-lucky.herokuapp.com', 'twitter-clone-n1.netlify.app']
+ALLOWED_HOSTS = ['192.168.10.50']
 
 # Application definition
 
@@ -44,7 +44,9 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "http://127.0.0.1:3000"
+    "http://127.0.0.1:3000",
+    'n1ck-lucky.herokuapp.com',
+    'twitter-clone-n1.netlify.app'
 ]
 
 MIDDLEWARE = [

@@ -45,8 +45,8 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    'n1ck-lucky.herokuapp.com',
-    'twitter-clone-n1.netlify.app'
+    'https://n1ck-lucky.herokuapp.com',
+    'https://twitter-clone-n1.netlify.app'
 ]
 
 MIDDLEWARE = [

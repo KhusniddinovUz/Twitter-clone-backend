@@ -47,7 +47,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     'https://n1ck-lucky.herokuapp.com',
     'https://twitter-clone-n1.netlify.app',
-    'https://twitter-clone-frontend-gray.vercel.app'
 ]
 
 MIDDLEWARE = [

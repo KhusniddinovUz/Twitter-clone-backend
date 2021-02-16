@@ -10,6 +10,9 @@ class TweetModel(models.Model):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True)
     username = models.CharField(max_length=100, blank=True)
 
+    def __str__(self):
+        return f'{self.username}: {self.text[0:15]}'
+
 
 class Comment(models.Model):
     tweet = models.ForeignKey(TweetModel, on_delete=models.CASCADE, related_name='comment')

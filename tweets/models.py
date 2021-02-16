@@ -13,9 +13,10 @@ class TweetModel(models.Model):
 
 class Comment(models.Model):
     tweet = models.ForeignKey(TweetModel, on_delete=models.CASCADE, related_name='comment')
-    username = models.CharField(max_length=255)
+    username = models.CharField(max_length=255, blank=True)
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
         ordering = ('created', 'username')

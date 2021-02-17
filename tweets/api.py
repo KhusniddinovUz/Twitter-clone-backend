@@ -30,17 +30,23 @@ class OwnersTweet(viewsets.ModelViewSet):
         return ordered
 
 
-# Commenting System
-class CommentSystem(generics.ListCreateAPIView):
+# Commenting System for creating and getting
+class CommentList(generics.ListAPIView):
     permission_classes = [
         permissions.IsAuthenticated
     ]
     serializer_class = CommentSerializer
 
     def get_queryset(self):
-        # queryset = TweetModel.objects.get(owner=self.request.user.id).comment.all()
-        # return queryset
-        print(self.request.data)
+        tweet_id = self.kwargs.get('tweet_id')
+        queryset = TweetModel.objects.get(pk=tweet_id).comment.all()
+        return queryset
+
+
+# Commenting System for deleting
+class CommentSingle(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = CommentSerializer
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user, username=self.request.user.username)

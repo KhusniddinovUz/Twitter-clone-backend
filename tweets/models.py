@@ -14,8 +14,9 @@ class TweetModel(models.Model):
         return f'{self.username}: {self.text[0:15]}'
 
 
+# Comment Model
 class Comment(models.Model):
-    tweet = models.ForeignKey(TweetModel, on_delete=models.CASCADE, related_name='comment', blank=True)
+    tweet = models.ForeignKey(TweetModel, on_delete=models.CASCADE, related_name='comment')
     username = models.CharField(max_length=255, blank=True)
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
@@ -25,4 +26,4 @@ class Comment(models.Model):
         ordering = ('created', 'username')
 
     def __str__(self):
-        return f'Comment by {self.username} to {self.tweet.owner}'
+        return f'{self.username}: {self.body[0:15]}'

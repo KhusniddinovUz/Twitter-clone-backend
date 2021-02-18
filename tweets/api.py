@@ -44,7 +44,7 @@ class CommentList(generics.ListAPIView):
 
 
 # Commenting System for deleting
-class CommentSingle(generics.RetrieveUpdateDestroyAPIView):
+class CommentSingle(generics.CreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = CommentSerializer
 

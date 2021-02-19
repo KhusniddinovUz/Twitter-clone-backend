@@ -39,8 +39,12 @@ class CommentList(generics.ListAPIView):
 
     def get_queryset(self):
         tweet_id = self.kwargs.get('tweet_id')
-        queryset = TweetModel.objects.get(pk=tweet_id).comment.all()
-        return queryset
+        if tweet_id == 'all':
+            queryset = Comment.objects.all()
+            return queryset
+        else:
+            queryset = TweetModel.objects.get(pk=tweet_id).comment.all()
+            return queryset
 
 
 # Commenting System for deleting

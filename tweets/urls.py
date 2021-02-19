@@ -7,7 +7,7 @@ router.register('', TweetViewset, 'tweets')
 
 urlpatterns = [
     path('own/', OwnersTweet.as_view({'get': 'list'}), ),
-    path('comments/<int:tweet_id>', CommentList.as_view()),
+    path('comments/<tweet_id>', CommentList.as_view()),
     path('comment/', CommentSingle.as_view())
 ]
 

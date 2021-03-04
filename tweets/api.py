@@ -53,3 +53,10 @@ class DeleteComment(generics.DestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = CommentSerializer
     queryset = Comment.objects.all()
+
+
+# Deleting a tweet
+class DeleteTweet(generics.DestroyAPIView):
+    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = TweetSerializer
+    queryset = TweetModel.objects.all()

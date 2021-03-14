@@ -12,6 +12,9 @@ class TweetViewset(viewsets.ModelViewSet):
 
     def get_queryset(self):
         ordered = TweetModel.objects.order_by('-created_at')
+        for i in ordered:
+            i.username = i.owner.username
+            i.save()
         return ordered
 
     def perform_create(self, serializer):

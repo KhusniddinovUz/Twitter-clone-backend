@@ -23,7 +23,7 @@ class Comment(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
 
     class Meta:
-        ordering = ('created', 'username')
+        ordering = ('-created', 'username')
 
     def __str__(self):
         return f'{self.username}: {self.body[0:15]}'

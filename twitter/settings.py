@@ -56,7 +56,7 @@ REST_KNOX = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    'https://n1ck-lucky.herokuapp.com',
+    'https://zeroni.herokuapp.com/',
     'https://twitter-clone-uz.netlify.app',
 ]
 
@@ -98,10 +98,10 @@ WSGI_APPLICATION = 'twitter.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd3sll0ldln4nei',
-        'USER': 'kcguzaopegywxk',
-        'PASSWORD': 'a32911b39e0d655f72c5ffbe49534072234e26852e6878c2303556c94228c9bf',
-        'HOST': 'ec2-52-19-82-27.eu-west-1.compute.amazonaws.com',
+        'NAME': 'd8ooisjuvisef5',
+        'USER': 'nonaforamlcjbl',
+        'PASSWORD': 'e6b3f9690928224b40875e2df2bee7fbc4ffb2db7e8dc88caeb0458b09709a4a',
+        'HOST': 'ec2-44-206-89-185.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }

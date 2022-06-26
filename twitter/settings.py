@@ -14,7 +14,7 @@ SECRET_KEY = '^!uvh&e8n1*c7m%+$_l9djb$!)#s$#2hjrrb4)udo8o&y0q@q&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.10.50']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 # Application definition
 
@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_filters',
     'rest_framework_simplejwt',
+    'whitenoise.runserver_nostatic',
 ]
 
 AUTH_USER_MODEL = 'accounts.Accounts'

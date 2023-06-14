@@ -98,16 +98,13 @@ WSGI_APPLICATION = 'twitter.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd8ooisjuvisef5',
-        'USER': 'nonaforamlcjbl',
-        'PASSWORD': 'e6b3f9690928224b40875e2df2bee7fbc4ffb2db7e8dc88caeb0458b09709a4a',
-        'HOST': 'ec2-44-206-89-185.compute-1.amazonaws.com',
+        'NAME': 'd2m08uosihb6vr',
+        'USER': 'dabpdkdrjjdhlq',
+        'PASSWORD': 'd03d536c9d9e4904e5c497c4cef04c4be615a57eb69ce557bcd44d7ccdd70e86',
+        'HOST': 'ec2-3-234-204-26.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
-
-# Password validation
-# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {

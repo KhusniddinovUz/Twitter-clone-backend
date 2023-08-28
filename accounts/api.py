@@ -28,7 +28,7 @@ class RegisterAPI(generics.GenericAPIView):
         user = serializer.save()
 
         token = RefreshToken.for_user(user).access_token
-        url = f'https://zeroni.herokuapp.com/api/verify-email?token={str(token)}'
+        url = f'https://twitter-clone-khus-a092864ed6e6.herokuapp.com/api/verify-email?token={str(token)}'
         email_body = f'Hi {user.username}. Please, click the link below to verify your TwitterCloneUz account. {url}'
         data = {'message': email_body, 'receiver': user.email}
         Util.send_email(data)
@@ -48,7 +48,8 @@ class VerifyEmail(generics.GenericAPIView):
             user = Accounts.objects.get(id=payload['user_id'])
             user.email_verified = True
             user.save()
-            return Response({'message': 'Email has been successfully activated'}, status=status.HTTP_200_OK)
+            return Response({'message': 'Email has been successfully activated'},
+                            status=status.HTTP_200_OK)
         except jwt.ExpiredSignatureError:
             return Response({'message': 'Activation Failed'}, status=status.HTTP_400_BAD_REQUEST)
         except jwt.DecodeError:

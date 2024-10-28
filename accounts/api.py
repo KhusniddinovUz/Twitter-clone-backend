@@ -28,7 +28,7 @@ class RegisterAPI(generics.GenericAPIView):
         user = serializer.save()
 
         token = RefreshToken.for_user(user).access_token
-        url = f'https://twitter-clone-khus-a092864ed6e6.herokuapp.com/api/verify-email?token={str(token)}'
+        url = f'https://twitter-backend-6553b8936813.herokuapp.com/api/verify-email?token={str(token)}'
         email_body = f'Hi {user.username}. Please, click the link below to verify your TwitterCloneUz account. {url}'
         data = {'message': email_body, 'receiver': user.email}
         Util.send_email(data)
